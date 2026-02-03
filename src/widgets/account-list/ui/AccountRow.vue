@@ -45,7 +45,6 @@
 
     <div class="field row__password">
       <template v-if="form.type === 'LOCAL'">
-        <label class="field__label" :for="fieldIds.password">Пароль</label>
         <PasswordField
           :id="fieldIds.password"
           v-model="form.password"
