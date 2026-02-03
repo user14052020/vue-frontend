@@ -23,45 +23,15 @@
   @apply w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 outline-none transition;
   @apply focus:border-blue-500 focus:ring-2 focus:ring-blue-200;
   height: 42px;
-  border-radius: 6px;
 }
 
 .field__input--error {
   @apply border-red-500 focus:border-red-500 focus:ring-red-200;
 }
 
-.field__input--with-icon {
-  padding-right: 44px;
-}
-
-.field__error {
-  @apply text-xs text-red-600;
-  min-height: 16px;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-.field__error--visible {
-  opacity: 1;
-}
-
 .row__password-spacer {
   min-height: 62px;
   visibility: hidden;
-}
-
-.password-field {
-  position: relative;
-}
-
-.password-toggle {
-  @apply absolute right-2 top-1/2 -translate-y-1/2 rounded-lg p-1 text-slate-500 transition;
-  @apply hover:bg-slate-100 hover:text-slate-800;
-}
-
-.password-toggle svg {
-  width: 20px;
-  height: 20px;
 }
 
 .row__actions {
@@ -71,18 +41,6 @@
 .delete-button {
   @apply rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-xs font-semibold uppercase tracking-wider text-red-600 transition;
   @apply hover:bg-red-100;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
 }
 
 @media (max-width: 900px) {

@@ -1,0 +1,10 @@
+.field__error {
+  @apply text-xs text-red-600;
+  min-height: 16px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.field__error--visible {
+  opacity: 1;
+}

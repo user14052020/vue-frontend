@@ -11,9 +11,7 @@
         maxlength="50"
         @blur="commit"
       />
-      <p class="field__error" :class="{ 'field__error--visible': errors.labelInput }">
-        {{ errors.labelInput }}
-      </p>
+      <FieldError :error="errors.labelInput" />
     </div>
 
     <div class="field">
@@ -28,9 +26,7 @@
           {{ option.label }}
         </option>
       </select>
-      <p class="field__error" :class="{ 'field__error--visible': errors.type }">
-        {{ errors.type }}
-      </p>
+      <FieldError :error="errors.type" />
     </div>
 
     <div class="field">
@@ -44,52 +40,21 @@
         maxlength="100"
         @blur="commit"
       />
-      <p class="field__error" :class="{ 'field__error--visible': errors.login }">
-        {{ errors.login }}
-      </p>
+      <FieldError :error="errors.login" />
     </div>
 
     <div class="field row__password">
       <template v-if="form.type === 'LOCAL'">
-        <div class="password-field">
-          <input
-            :id="fieldIds.password"
-            v-model="form.password"
-            class="field__input field__input--with-icon"
-            :class="{ 'field__input--error': errors.password }"
-            :type="showPassword ? 'text' : 'password'"
-            placeholder="Введите пароль"
-            maxlength="100"
-            @blur="commit"
-          />
-          <button class="password-toggle" type="button" @click="togglePassword">
-            <span class="sr-only">Показать или скрыть пароль</span>
-            <svg v-if="!showPassword" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M3 3l18 18M10.5 10.5a2.5 2.5 0 003.5 3.5M6.4 6.4C4.2 8 2.7 10.1 2 12c1.7 4.5 6 7.5 10 7.5 1.7 0 3.3-.5 4.7-1.3M9.2 4.7C10.1 4.4 11 4.3 12 4.3c4 0 8.3 3 10 7.5-.4 1-1 2-1.7 2.8"
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.8"
-              />
-            </svg>
-            <svg v-else viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.8"
-              />
-              <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8" />
-            </svg>
-          </button>
-        </div>
-        <p class="field__error" :class="{ 'field__error--visible': errors.password }">
-          {{ errors.password }}
-        </p>
+        <label class="field__label" :for="fieldIds.password">Пароль</label>
+        <PasswordField
+          :id="fieldIds.password"
+          v-model="form.password"
+          :error="errors.password"
+          placeholder="Введите пароль"
+          :maxlength="100"
+          @blur="commit"
+        />
+        <FieldError :error="errors.password" />
       </template>
       <div v-else class="row__password-spacer" aria-hidden="true"></div>
     </div>
