@@ -1,0 +1,46 @@
+.app-shell {
+  @apply px-5 pb-20 pt-8;
+}
+
+.hero {
+  @apply relative mx-auto mb-8 grid gap-3 rounded-3xl p-7 shadow-soft;
+  background: linear-gradient(135deg, #ffffff, #f6fbff);
+}
+
+.hero__copy {
+  @apply max-w-2xl;
+}
+
+.hero__eyebrow {
+  @apply m-0 text-xs font-semibold uppercase text-slate-500;
+  letter-spacing: 0.18em;
+}
+
+.hero__title {
+  @apply mb-2 mt-2 text-3xl font-semibold md:text-4xl;
+}
+
+.hero__subtitle {
+  @apply m-0 text-base text-slate-600;
+}
+
+.hero__orb {
+  position: absolute;
+  right: -80px;
+  top: -120px;
+  width: 260px;
+  height: 260px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #d6ecff, #91bfe8 70%, transparent 72%);
+  opacity: 0.75;
+}
+
+.page {
+  @apply mx-auto max-w-5xl;
+}
+
+@media (max-width: 720px) {
+  .hero {
+    @apply p-6;
+  }
+}

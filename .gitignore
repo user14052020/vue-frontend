@@ -1,0 +1,16 @@
+node_modules
+.DS_Store
+dist
+.vite
+.env
+.env.*
+*.log
+
+# IDE
+.vscode
+.idea
+
+# Local
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
