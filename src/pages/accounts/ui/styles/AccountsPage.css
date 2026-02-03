@@ -1,0 +1,29 @@
+.card {
+  @apply grid gap-5 rounded-3xl bg-white p-7 shadow-soft;
+}
+
+.card__header {
+  @apply flex items-center justify-between gap-4;
+}
+
+.card__title {
+  @apply mb-1 text-xl font-semibold;
+}
+
+.card__subtitle {
+  @apply m-0 text-sm text-slate-600;
+}
+
+.add-button {
+  @apply h-11 w-11 rounded-2xl bg-blue-600 text-xl font-semibold text-white shadow-lg transition hover:bg-blue-700;
+}
+
+@media (max-width: 720px) {
+  .card {
+    @apply p-5;
+  }
+
+  .card__header {
+    @apply flex-col items-start;
+  }
+}

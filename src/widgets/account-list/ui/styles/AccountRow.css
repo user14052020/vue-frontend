@@ -1,0 +1,66 @@
+.row {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr 1fr 1fr 120px;
+  gap: 12px;
+  align-items: start;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  padding: 12px;
+}
+
+.field {
+  @apply flex flex-col gap-2;
+}
+
+.field__label {
+  @apply text-xs font-semibold uppercase text-slate-500;
+  letter-spacing: 0.08em;
+}
+
+.field__input,
+.field__select {
+  @apply w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 outline-none transition;
+  @apply focus:border-blue-500 focus:ring-2 focus:ring-blue-200;
+  height: 42px;
+}
+
+.field__input--error {
+  @apply border-red-500 focus:border-red-500 focus:ring-red-200;
+}
+
+.field__error {
+  @apply text-xs text-red-600;
+  min-height: 16px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.field__error--visible {
+  opacity: 1;
+}
+
+.row__password-spacer {
+  min-height: 62px;
+  visibility: hidden;
+}
+
+.row__actions {
+  @apply flex items-center justify-center;
+}
+
+.delete-button {
+  @apply rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-xs font-semibold uppercase tracking-wider text-red-600 transition;
+  @apply hover:bg-red-100;
+}
+
+@media (max-width: 900px) {
+  .row {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  .row__actions {
+    justify-content: flex-end;
+  }
+}

@@ -1,0 +1,18 @@
+.list {
+  @apply grid gap-4;
+}
+
+.list__labels {
+  @apply grid grid-cols-[1.2fr_0.9fr_1fr_1fr_40px] gap-3 text-xs font-semibold uppercase text-slate-500;
+  letter-spacing: 0.08em;
+}
+
+.list__empty {
+  @apply rounded-2xl border border-dashed border-slate-300 p-5 text-center text-sm text-slate-500;
+}
+
+@media (max-width: 900px) {
+  .list__labels {
+    @apply hidden;
+  }
+}
