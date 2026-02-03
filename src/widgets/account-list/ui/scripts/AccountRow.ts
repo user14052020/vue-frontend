@@ -1,4 +1,4 @@
-import { defineComponent, reactive, watch, computed, type PropType } from 'vue';
+import { defineComponent, reactive, watch, computed, ref, type PropType } from 'vue';
 import { useAccountStore } from '@/entities/account/model/store';
 import type { Account, AccountFormValues, AccountType, AccountValidationErrors } from '@/shared/types/account';
 import { formatLabels, validateAccount } from '@/shared/lib/account';
@@ -27,6 +27,7 @@ export default defineComponent({
     });
 
     const errors = reactive<AccountValidationErrors>({});
+    const showPassword = ref(false);
 
     const fieldIds = computed(() => ({
       label: `label-${props.account.id}`,
@@ -72,13 +73,19 @@ export default defineComponent({
       store.removeAccount(props.account.id);
     };
 
+    const togglePassword = () => {
+      showPassword.value = !showPassword.value;
+    };
+
     return {
       form,
       errors,
       typeOptions,
       fieldIds,
+      showPassword,
       commit,
       handleTypeChange,
+      togglePassword,
       remove
     };
   }
